@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="pyrtk",
-    version="0.1.0",
+    name="pyrtk-cli",
+    version="0.1.1",
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
@@ -14,14 +14,20 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "pyrtk=pyrtk.cli:main",
+            "pyrtk=pyrtk.main:main",
         ],
     },
-    author="Tu Nombre",
-    description="Python REST Toolkit CLI",
+    author="Andres Mardones",
+    description="A modern CLI for scaffolding and managing FastAPI projects with clean architecture.",
+    long_description=open("README.md").read(),
+    long_description_content_type="text/markdown",
     classifiers=[
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",
+        "Development Status :: 4 - Beta",
+        "Intended Audience :: Developers",
+        "Topic :: Software Development :: Build Tools",
+        "Framework :: FastAPI"
     ],
     python_requires='>=3.7',
 )

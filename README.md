@@ -14,10 +14,16 @@ brew install pipx && pipx ensurepath
 python3 -m pip install --user pipx && python3 -m pipx ensurepath
 ```
 
-Then install PyRTK globally:
+Then install PyRTK globally via pipx:
 
 ```bash
-pipx install dist/pyrtk-0.1.0-py3-none-any.whl
+pipx install pyrtk-cli
+```
+
+Or install it via pip:
+
+```bash
+pip install pyrtk-cli
 ```
 
 Now you can use the `pyrtk` command from anywhere 🎉

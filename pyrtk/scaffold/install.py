@@ -18,7 +18,12 @@ def create_virtualenv(project_path: Path) -> Path:
         task = progress.add_task(f"🐍 Creating virtual environment '{venv_path.name}'...", total=None)
 
         try:
-            subprocess.run(["python3", "-m", "venv", str(venv_path)], check=True)
+            subprocess.run(
+                ["python3", "-m", "venv", str(venv_path)],
+                check=True,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL
+            )
             progress.update(task, description=f"✅ Virtual environment '{venv_path.name}' created.")
         except subprocess.CalledProcessError:
             progress.update(task, description=f"❌ Failed to create virtual environment '{venv_path.name}'.")
@@ -38,7 +43,6 @@ def install_requirements(project_path: Path):
 
     venv_path = create_virtualenv(project_path)
 
-    # Detect pip path in the virtual env
     if platform.system() == "Windows":
         pip_path = venv_path / "Scripts" / "pip.exe"
     else:
@@ -54,13 +58,14 @@ def install_requirements(project_path: Path):
         try:
             subprocess.run(
                 [str(pip_path), "install", "-r", str(req_path)],
-                check=True
+                check=True,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL
             )
             progress.update(task, description="✅ Dependencies installed successfully.")
         except subprocess.CalledProcessError:
             progress.update(task, description="❌ Failed to install dependencies.")
 
-    # Show activation instructions
     print("\n" + "=" * 60)
     print("🎉 Project setup complete!")
     print("💡 To activate your environment:\n")

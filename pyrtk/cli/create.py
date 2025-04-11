@@ -2,10 +2,7 @@ import typer
 from pyrtk.scaffold.api import create_api_structure
 from pyrtk.scaffold.ms import create_ms_structure
 
-app = typer.Typer(help="Create a new FastAPI API or Microservice project.")
-
-@app.command()
-def project(
+def create(
     name: str = typer.Argument(..., help="Name of the new project"),
     type: str = typer.Option(..., "--type", "-t", help="Project type: 'api' or 'ms'")
 ):
@@ -27,7 +24,11 @@ def project(
             create_ms_structure(name)
 
         typer.echo(f"✅ Project '{name}' created successfully.")
-    
+
     except FileExistsError:
         typer.echo(f"⚠️  The folder '{name}' already exists.")
         raise typer.Exit(code=1)
+
+# Este es el objeto que registra el comando en el CLI principal
+app = typer.Typer()
+app.command()(create)

@@ -5,7 +5,7 @@ from pyrtk.internal import run_logic
 app = typer.Typer(help="Run your PyRTK project with Uvicorn.")
 
 @app.command()
-def start():
+def run():
     """
     Start the FastAPI server.
     """

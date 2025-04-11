@@ -1,5 +1,18 @@
 # 📦 CHANGELOG
 
+## [0.1.2] - 2024-04-10
+### Added
+- Minimal CLI output during `create`: only progress bars shown, no verbose logs
+- Spinner for virtual environment creation and dependency installation
+- Clean `install.py` handling for professional UX
+
+### Fixed
+- CLI structure now uses `@app.command()` for all top-level commands
+- Removed nested `create` command issue
+- Corrected main CLI registration to import only callable objects
+
+---
+
 ## [0.1.1] - 2024-04-10
 ### Added
 - Modular CLI architecture using Typer (commands split into `cli/` directory)

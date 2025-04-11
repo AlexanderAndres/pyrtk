@@ -10,3 +10,4 @@ typer==0.15.2
 typing_extensions==4.13.1
 wheel==0.46.1
 rich
+pytest

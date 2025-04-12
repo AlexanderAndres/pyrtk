@@ -1,5 +1,14 @@
 # 📦 CHANGELOG
 
+## [0.1.3] - 2024-04-10
+### Added
+- `pyrtk generate <name>` command to scaffold full CRUD structure
+- Generates: routers/, models/, schemas/, services/ with `__init__.py` and base file
+- Automatically registers router in `main.py` after `apply_middlewares(app)`
+
+### Improved
+- Developer workflow and structure for rapid scaffolding
+
 ## [0.1.2] - 2024-04-10
 ### Added
 - Minimal CLI output during `create`: only progress bars shown, no verbose logs

@@ -1,7 +1,7 @@
 import typer
 from pyrtk.cli.create import create
 from pyrtk.cli.run import run
-# from pyrtk.cli.test import test
+from pyrtk.cli.generate import generate
 # from pyrtk.cli.docs import docs
 
 app = typer.Typer(
@@ -11,6 +11,7 @@ app = typer.Typer(
 # Comandos simples registrados (sin subgrupos)
 app.command()(create)
 app.command()(run)
+app.command()(generate)
 
 def main() -> None:
     """CLI entrypoint."""

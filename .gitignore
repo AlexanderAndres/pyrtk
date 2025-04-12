@@ -1,9 +1,18 @@
 # Python
-__pycache__/
+**/__pycache__/
 *.pyc
 *.pyo
+.venv/
 
 # Build artifacts
 build/
 dist/
 *.egg-info/
+
+# Testing
+.coverage
+.junit.xml
+.pytest_cache/
+tests/tmp/
+testapi
+testms

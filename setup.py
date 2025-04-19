@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="pyrtk-cli",
-    version="0.1.2",
+    version="0.1.3",
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
@@ -12,22 +12,23 @@ setup(
         "uvicorn",
         "python-dotenv"
     ],
+    extras_require={
+        "dev": [
+            "pytest",
+            "setuptools",
+            "wheel"
+        ]
+    },
     entry_points={
         "console_scripts": [
             "pyrtk=pyrtk.main:main",
         ],
     },
     author="Andres Mardones",
-    description="A modern CLI for scaffolding and managing FastAPI projects with clean architecture.",
-    long_description=open("README.md").read(),
-    long_description_content_type="text/markdown",
+    description="Python REST Toolkit CLI",
     classifiers=[
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",
-        "Development Status :: 4 - Beta",
-        "Intended Audience :: Developers",
-        "Topic :: Software Development :: Build Tools",
-        "Framework :: FastAPI"
     ],
     python_requires='>=3.7',
 )

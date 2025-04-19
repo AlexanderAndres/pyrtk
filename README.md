@@ -1,77 +1,64 @@
-# 🛠️ PyRTK - Python REST Toolkit CLI
+# PyRTK - Python REST Toolkit
 
-PyRTK is a modern CLI tool to scaffold and manage clean, modular FastAPI projects and microservices — with style 😎
-
----
-
-## 🚀 Installation (Recommended via pipx)
-
-Make sure you have [pipx](https://pypa.github.io/pipx/) installed:
-
-```bash
-brew install pipx && pipx ensurepath
-# or
-python3 -m pip install --user pipx && python3 -m pipx ensurepath
-```
-
-Then install PyRTK globally via pipx:
-
-```bash
-pipx install pyrtk-cli
-```
-
-Or install it via pip:
-
-```bash
-pip install pyrtk-cli
-```
-
-Now you can use the `pyrtk` command from anywhere 🎉
+PyRTK is a developer-friendly CLI and framework for building structured, scalable REST APIs and microservices in Python. It brings modularity, best practices and FastAPI power under one unified command-line workflow.
 
 ---
 
-## 📦 Commands
+## Why PyRTK?
 
-### `pyrtk create <project-name> --type api|ms`
+Developing microservices in Python can often lead to disorganized projects, duplicated boilerplate, and a lack of standardization. PyRTK solves that by:
 
-Scaffolds a complete API or Microservice:
+- Providing opinionated folder structures for APIs and microservices
+- Scaffolding CRUD components instantly with `pyrtk generate`
+- Automating common tasks like router registration
+- Promoting modular, maintainable codebases
 
-- `api`: simple FastAPI project with routers, schemas, middleware, and main.py
-- `ms`: full microservice architecture (core, models, services, routers, etc.)
+---
 
-Example:
+## Features
+
+- 🔧 CLI generator for microservices and REST APIs
+- ⚙️ CRUD scaffolding (`generate`)
+- 🧩 Auto-router registration
+- 📦 Built-in FastAPI integration
+- 🧼 Project conventions based on best practices
+
+---
+
+## Roadmap
+
+- [x] CLI with `create`, `run`, `generate`
+- [x] Auto-register routers in main.py
+- [x] Custom project structure per type (`api`, `ms`)
+- [ ] Internal build tools (`build`, `release`)
+- [ ] VS Code generator extension (maybe?)
+- [ ] Plugin system for extensions
+
+---
+
+## Getting Started
+
+### 1. Create a virtual environment
 
 ```bash
-pyrtk create panaderia --type ms
+python3 -m venv pyrtk-env
+source pyrtk-env/bin/activate  # On Windows: .\pyrtk-env\Scripts\activate
 ```
 
-✅ This will also:
-- Create a virtual environment inside the project
-- Install dependencies
-- Show you how to activate the environment manually
+### 2. Install PyRTK
 
----
+#### For general usage (just to use the CLI):
+```bash
+pip3 install .
+```
 
-### `pyrtk run`
+#### For development (with test and build tools):
+```bash
+pip3 install -e ".[dev]"
+```
 
-Runs your FastAPI project automatically using the environment created.
+### 3. Verify installation
 
 ```bash
-cd panaderia
-pyrtk run
+pyrtk --help
 ```
-
-This will launch the Uvicorn server using the right Python environment automatically 🚀
-
----
-
-## 🔜 Coming Soon
-
-- `pyrtk generate <type> <name>` → Auto-generate routers, schemas, models, etc.
-- Plugin system
-- Custom project templates
-- Docker & deployment helpers
-
----
-
-## 🧡 Made with love by Andrés Mardones
